@@ -1,5 +1,4 @@
 import BigNumber from 'bignumber.js';
-import Rates from './rates';
 import * as colors from 'colors/safe';
 import { ethers } from 'ethers';
 import { uniswapExchangeABI } from '../../contracts/uniswapExchangeABI';
@@ -19,7 +18,6 @@ export default class Uniswap {
   private _lastPrice: BigNumber;
   private _pid: any;
   private _provider: any;
-  private _rates: Rates;
 
   constructor(address: string, provider: any) {
     rainbow(`Setting up Uniswap long polling for ${address}...`);
@@ -27,7 +25,6 @@ export default class Uniswap {
     this._contract = new ethers.Contract(address, uniswapExchangeABI, provider);
     this._lastPrice = new BigNumber(0);
     this._provider = provider;
-    this._rates = new Rates;
 
     setTimeout(() => this.start(), 0);
   }

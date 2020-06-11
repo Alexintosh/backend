@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as _ from "lodash";
 import * as moment from 'moment';
-import Prices from "./Prices";
+
 import Config from "../config";
 import {AssetModel} from '../models/Asset';
 
@@ -103,7 +103,6 @@ export default class Crypto {
      * This function will save the values into the database.
      */
     public async storeRates(data: StockApiResponseSimple) {
-        const prices = new Prices();
-        const store = await prices.store('alphavantage', data.symbol, data.last_refreshed, 0, data.data.open, data.data.high, data.data.low, data.data.close, data.data.volume);
+        console.log('storing not here..')
     }
 }

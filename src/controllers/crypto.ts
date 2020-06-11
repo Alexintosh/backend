@@ -2,7 +2,6 @@ import * as Koa from "koa";
 import * as Router from "koa-router";
 import * as moment from "moment";
 
-import Prices from "../managers/Prices";
 import Crypto from "../managers/Crypto";
 
 const routerOpts: Router.IRouterOptions = {

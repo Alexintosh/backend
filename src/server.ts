@@ -6,7 +6,6 @@ import * as bodyParser from "koa-bodyparser";
 import * as cors from '@koa/cors';
 
 import DB from './db';
-import ratesController from "./controllers/rates";
 import stockController from "./controllers/stock";
 import chartsController from "./controllers/charts";
 import cryptoController from "./controllers/crypto";
@@ -126,9 +125,6 @@ app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {
         ctx.app.emit("error", error, ctx);
     }
 });
-
-app.use(ratesController.routes());
-app.use(ratesController.allowedMethods());
 
 app.use(portfolioController.routes());
 app.use(portfolioController.allowedMethods());

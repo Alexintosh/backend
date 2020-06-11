@@ -1,6 +1,5 @@
 import * as moment from 'moment';
 import axios from 'axios';
-import Prices from "./Prices";
 import Config from "../config";
 import {Candle} from '../interfaces';
 import {AssetModel} from '../models/Asset';
@@ -116,17 +115,6 @@ export default class Stock {
    * This function will save the values into the database.
    */
   public async storeRates(data: StockApiResponseSimple) {
-    const prices = new Prices();
-    const store = await prices.store(
-      'alphavantage',
-      data.symbol,
-      data.last_refreshed,
-      0,
-      data.data.open,
-      data.data.high,
-      data.data.low,
-      data.data.close,
-      data.data.volume
-    );
+    console.log('Pricing not here...')
   }
 }
